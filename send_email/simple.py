@@ -15,7 +15,9 @@ passwd = 'xxx'
 to_addrs = ['xxx@gmail.com']
 smtp_server = 'smtp.qq.com'
 
-msg = MIMEText('hello, send by python ...', 'plain', 'utf8')
+msg = MIMEText('<html><body><h1>Hello !</h1>' +
+               '<p>send by<a href="http://www.python.org"> Python</a>...</p>' +
+               '</body></html>', 'html', 'utf8')
 msg['From'] = _format_addr(f'Jasonqiao36 <{from_addr}>')
 msg['To'] = _format_addr(f'管理员 <{to_addrs}>')
 msg['Subject'] = Header('来自Jason的问候..', 'utf8').encode()
